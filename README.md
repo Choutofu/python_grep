@@ -13,7 +13,7 @@ optional arguments:
 ![](/image/1.usage.PNG)
 
 ```base
-python3 python_grep_v1.1.py -p database_absolute_folder_path -i 1.txt
+python3 python_grep_v1.1.py -p database_absolute_folder_path -i search_string_file
 ```
 ![](/image/2.run.PNG)
 
