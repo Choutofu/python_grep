@@ -1,4 +1,5 @@
 import sys, os
+import glob
 from multiprocessing import Pool
 import codecs
 from itertools import *
@@ -36,11 +37,11 @@ def search_action(str_and_path):
 	with codecs.open(file_path, 'rb') as f:
 		data_list = f.read().splitlines()
 	for data in data_list:
-		if key in data:
+		if key.lower() in data.lower():
 			print('[*] {0} in {2} - {1}'.format(key, data, file_path))
 			# Save result to file
 			with codecs.open(SAVE_FILE_PATH, 'a', 'utf-8') as f:
-				f.write(str(data) + '\n')
+				f.write(str(data).replace('b\'', '').replace('\'', '') + '\n')
 
 # Use multiprocessing function
 def search_string(database_folder, search_string_file):
